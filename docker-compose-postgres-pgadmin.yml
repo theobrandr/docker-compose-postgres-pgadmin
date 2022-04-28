@@ -1,0 +1,30 @@
+#launch this docker-compose with "docker-compose up -f ./docker-compose-postgres-pgadmin.yml"
+version: '3.7'
+services:
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: your_username_here
+      POSTGRES_PASSWORD: replaceTHISpassword
+    volumes:
+      - volume_postgres_db:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: youremailhere@email.com
+      PGADMIN_DEFAULT_PASSWORD: replaceTHISpassword
+    volumes:
+      - volume_pgadmin:/var/lib/pgadmin
+
+volumes:
+  volume_postgres_db:
+  volume_pgadmin:
