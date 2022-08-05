@@ -1,4 +1,4 @@
-#launch this docker-compose with "docker-compose up -f ./docker-compose-postgres-pgadmin.yml"
+#launch this docker-compose with "docker-compose -f ./docker-compose-postgres-pgadmin.yml up -d"
 version: '3.7'
 services:
   postgres_db:
