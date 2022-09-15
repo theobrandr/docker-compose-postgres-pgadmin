@@ -33,7 +33,7 @@ volumes:
   volume_postgres_db:
   volume_pgadmin:
   
-  networks:
-   db_network:
+networks:
+  db_network:
     driver: bridge
 
